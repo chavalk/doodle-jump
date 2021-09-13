@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createDoodler() {
         grid.appendChild(doodler)
         doodler.classList.add('doodler')
+        doodletLeftSpace = platforms[0].left
         doodler.style.left = doodletLeftSpace + 'px'
         doodler.style.bottom = doodlerBottomSpace + 'px'
     }
@@ -81,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function start() {
         if (!isGameOver) {
-            createDoodler()
             createPlatforms()
+            createDoodler()
             setInterval(movePlatforms, 30)
             jump()
         }
