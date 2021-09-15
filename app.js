@@ -80,6 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(downTimerId)
     }
 
+    function control() {
+        if (e.key === "ArrowLeft") {
+            // Move left
+        } else if (e.key === "ArrowRight") {
+            // Move right
+        } else if (e.key === "ArrowUp") {
+            // Move straight
+        }
+    }
+
     function start() {
         if (!isGameOver) {
             createPlatforms()
