@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let platforms = []
     let upTimerId
     let downTimerId
+    let isJumping = true
 
     function createDoodler() {
         grid.appendChild(doodler)
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function jump() {
         clearInterval(downTimerId)
+        isJumping = true
         upTimerId = setInterval(function () {
             doodlerBottomSpace += 20
             doodler.style.bottom = doodlerBottomSpace + 'px';
@@ -64,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function fall() {
         clearInterval(upTimerId)
+        isJumping = false
         downTimerId = setInterval(function () {
             doodlerBottomSpace -= 5
             doodler.style.bottom = doodlerBottomSpace + 'px'
