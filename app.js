@@ -112,6 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function moveLeft() {
+        if (isGoingRight) {
+            clearInterval(rightTimerId)
+            isGoingRight = false
+        }
         isGoingLeft = true
         leftTimerId = setInterval(function () {
             if (doodlerLeftSpace >= 0) {
@@ -122,6 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function moveRight() {
+        if (isGoingLeft) {
+            clearInterval(leftTimerId)
+            isGoingLeft = false
+        }
         isGoingRight = true
         rightTimerId = setInterval( function () {
             if (doodlerLeftSpace <= 340) {
