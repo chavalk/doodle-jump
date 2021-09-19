@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     const doodler = document.createElement('div')
+    let isGameOver = false
+    let speed = 3
+    let platformCount = 5
+    let platforms = []
+    let score = 0
     let doodlerLeftSpace = 50
     let startPoint = 150
     let doodlerBottomSpace = startPoint
-    let isGameOver = false
-    let platformCount = 5
-    let platforms = []
+    const gravity = 0.9
     let upTimerId
     let downTimerId
     let isJumping = true
@@ -14,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isGoingRight = false
     let leftTimerId
     let rightTimerId
-    let score = 0
+    
 
     function createDoodler() {
         grid.appendChild(doodler)
