@@ -108,6 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = true
         clearInterval(upTimerId)
         clearInterval(downTimerId)
+        clearInterval(leftTimerId)
+        clearInterval(rightTimerId)
     }
 
     function control(e) {
