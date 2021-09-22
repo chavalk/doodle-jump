@@ -1,5 +1,6 @@
 .grid {
-    width: 400px;
+    margin: auto;
+    width: 21%;
     height: 600px;
     background-image: url('background.png');
     position: relative;
